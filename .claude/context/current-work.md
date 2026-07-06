@@ -1,9 +1,9 @@
 ---
-generated-from-commit: PENDING-FIRST-COMMIT
+generated-from-commit: 2caee17
 generated-from-branch: main
 generated-date: 2026-07-06
 covers-paths: []
-last-verified-commit: PENDING-FIRST-COMMIT
+last-verified-commit: 2caee17
 stato: in corso
 ---
 
@@ -29,8 +29,8 @@ LEARNER_PROFILE.md   popolato con le risposte reali del learner e la roadmap cos
 
 Definition of done:
 
-- [ ] `/profile` eseguito con risposte reali, non placeholder
-- [ ] Roadmap pedagogica presente in `LEARNER_PROFILE.md`
+- [x] `/profile` eseguito con risposte reali, non placeholder
+- [x] Roadmap pedagogica presente in `LEARNER_PROFILE.md` (unità spa-01…spa-11)
 - [ ] Prima unità erogata con `/learn`, con citazione di una fonte reale da `SOURCES.md`
 
 Domande aperte:
@@ -40,4 +40,4 @@ tutor traccia comunque i progressi in `LEARNER_PROFILE.md` in assenza di Anki.
 
 ## Riconciliazione
 
-Ultima verifica: 2026-07-06, al commit `PENDING-FIRST-COMMIT`.
+Ultima verifica: 2026-07-06, al commit `2caee17`.

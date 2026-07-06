@@ -1,5 +1,5 @@
 ---
-generated-from-commit: PENDING-FIRST-COMMIT
+generated-from-commit: 2caee17
 generated-from-branch: main
 generated-date: 2026-07-06
 covers-paths:
@@ -7,7 +7,7 @@ covers-paths:
   - tools/doc-ingest.py
   - _notes/.tmp-doc-cache/**
   - vault-spagnolo/**
-last-verified-commit: PENDING-FIRST-COMMIT
+last-verified-commit: 2caee17
 ---
 
 # Stack di apprendimento

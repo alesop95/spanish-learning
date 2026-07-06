@@ -50,6 +50,7 @@ Stato del learner e fonti, in radice.
 ```
 LEARNER_PROFILE.md   stato del learner: topic, livello, cadenza, profilo cognitivo, roadmap pedagogica
 SOURCES.md            catalogo unico di tutte le fonti (personali + di ricerca), da citare sempre
+SESSION-LOG.md        log append-only delle sessioni /learn e /review, con durata reale e data/ora
 ```
 
 Regole modulari sotto `.claude/rules/`, skill sotto `.claude/skills/` (motore di riconciliazione:

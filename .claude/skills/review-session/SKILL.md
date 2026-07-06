@@ -27,3 +27,7 @@ Per topic di categoria lingua straniera, oltre al ripasso di card, la skill offr
 ## Vincoli
 
 Non mostra mai la risposta o la soluzione prima che il learner abbia tentato la propria. Non tratta il ricordo isolato di un fatto come prova di saperlo applicare: se la card è di puro richiamo (per esempio una definizione o un vocabolo), e la categoria del topic è programmazione o lingua, la skill intercala almeno un compito di applicazione nella sessione, non solo richiamo di definizioni, coerentemente con il limite dichiarato nella sezione 4 del riferimento. Non esegue `git add`, `commit` o `push`.
+
+## Nota specifica di questo progetto
+
+Come `learn-topic`, chiedi all'inizio quanto tempo è disponibile oggi (`session_minutes` è `variable`), e a chiusura del ripasso aggiungi una voce in cima a `SESSION-LOG.md` con data e ora, durata reale, cosa è stato ripassato (card dovute, o moduli in modalità senza Anki) ed esito.
