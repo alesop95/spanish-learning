@@ -1,0 +1,21 @@
+# Livello privato del sistema di progetto (vedi .claude/PROJECT-SYSTEM.md)
+_notes/
+CLAUDE.local.md
+.claude/settings.local.json
+.claude/scheduled_tasks.lock
+
+# Documenti grezzi e cache di ingestione (restano locali, catalogati in SOURCES.md)
+*.docx
+*.pdf
+*.7z
+*.rar
+*.xlsx
+_notes/.tmp-doc-cache/
+
+# Vault Obsidian personale, non tecnico
+vault-spagnolo/
+
+# Python (tools/doc-ingest.py)
+__pycache__/
+*.pyc
+.venv/

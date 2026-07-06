@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "anki": {
+      "command": "cmd",
+      "args": ["/c", "npx", "-y", "anki-mcp-server"]
+    }
+  }
+}
