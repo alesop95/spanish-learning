@@ -17,31 +17,41 @@
 
 ## 2. Libreria personale (McGraw-Hill "Practice Makes Perfect" e affini)
 
-Catalogata originariamente in `elenco_libri_spagnolo_0220.xlsx` (15 voci con foto, note, ISBN,
-formato, stato di lettura — file originale conservato in `_notes/raw-sources/`, locale). Fisicamente
-presenti, estratti da `_notes/raw-sources/libri.7z` in `_notes/raw-sources/libri-estratti/`:
+Catalogata in `elenco_libri_spagnolo_0220.xlsx` (13 voci reali con foto, note, ISBN, formato,
+stato di lettura — verificato riga per riga il 2026-07-06, non le 15-16 stimate a una prima
+ricognizione superficiale; file originale conservato in `_notes/raw-sources/`, locale). Undici
+sono digitali e fisicamente presenti, estratte da `_notes/raw-sources/libri.7z` in
+`_notes/raw-sources/libri-estratti/`; due sono cartacee e non hanno controparte digitale nella
+libreria — non indicizzabili da `doc-ingest`, vanno consultate a mano dal libro fisico.
 
-| Titolo | Autore | Edizione | Letto? |
-|---|---|---|---|
-| Basic Spanish | Dorothy Richmond | McGraw-Hill, 2020 | N |
-| Spanish (grammatica generale) | Dorothy Richmond | McGraw-Hill, 2021 | N |
-| Spanish Vocabulary | Dorothy Richmond | McGraw-Hill | N |
-| Spanish Verb Tenses | Dorothy Richmond | Premium 4th ed., McGraw-Hill, 2019 | N |
-| Complete Spanish All-in-One | Gilda Nissenberg | Premium 3rd ed., McGraw-Hill | N |
-| Complete Spanish Grammar | Gilda Nissenberg | Premium 4th ed., McGraw-Hill | N |
-| Spanish Conversation | Jean Yates | Premium 4th ed., McGraw-Hill, 2024 | N |
-| The Ultimate Spanish Review and Practice | Ronni L. Gordon | Premium 4th ed., McGraw-Hill, 2019 | N |
-| Spanish Verb Drills | Vivienne Bey | Premium 6th ed., McGraw-Hill, 2021 | N |
-| Complete Spanish Step by Step | — | Premium 2nd ed. | N |
-| Madrigal's Magic Key to Spanish | — | Random House Digital | N |
+| Titolo | Autore | Edizione | Formato | Letto? |
+|---|---|---|---|---|
+| Basic Spanish | Dorothy Richmond | Premium 3rd ed., McGraw-Hill, 2020 | Digitale | N |
+| Spanish Pronouns and Prepositions | Dorothy Richmond | Premium 4th ed., McGraw-Hill, 2021 | Digitale — **assente dall'archivio** | N |
+| Spanish Vocabulary | Dorothy Richmond | 3rd ed., McGraw-Hill, 2018 | Digitale | N |
+| Spanish Verb Tenses | Dorothy Richmond | Premium 4th ed., McGraw-Hill, 2019 | Digitale | N |
+| Complete Spanish All-in-One | Gilda Nissenberg | Premium 3rd ed., McGraw-Hill, 2022 | Digitale | N |
+| Complete Spanish Grammar | Gilda Nissenberg | Premium 4th ed., McGraw-Hill, 2020 | Digitale | N |
+| Spanish Conversation | Jean Yates | Premium 4th ed., McGraw-Hill, 2024 | Digitale | N |
+| The Ultimate Spanish Review and Practice | Ronni L. Gordon, David M. Stillman | Premium 4th ed., McGraw-Hill, 2019 | Digitale | N |
+| Spanish Verb Drills | Vivienne Bey, Beatrice Concheff, Jean Yates | Premium 6th ed., McGraw-Hill, 2022 | Digitale | N |
+| Complete Spanish Step by Step | Barbara Bregstein | Premium 2nd ed., McGraw-Hill, 2020 | Digitale | N |
+| Madrigal's Magic Key to Spanish | Margarita Madrigal | Broadway Books, 2001 | Digitale | N |
+| Gramática del español lengua extranjera | Carlos Romero Dueñas, Alfredo González Hermoso | Nueva edición, edelsa, 2011 | **Cartaceo** | N |
+| Contacto — Curso de español para italianos, Nivel 2 | José Pérez Navarro, Carla Polettini | Zanichelli, 2013 | **Cartaceo** | N |
 
-Note di verifica: `Spanish Verb Tenses` esiste in **due copie** con hash diverso (una in
-`_notes/raw-sources/Spanish Verb Tenses (2019).pdf`, 6.5MB, l'altra dentro la cartella estratta,
-6.3MB) — stessa opera, presumibilmente edizioni o scansioni diverse, non ancora confrontate riga
-per riga. Il catalogo xlsx cita anche un titolo **"Pronouns and Prepositions"** (visibile anche
-nel nome dell'archivio rar da cui è stato estratto il resto) che non risulta però tra i file
-fisicamente presenti dopo l'estrazione: da verificare se manca davvero o se è incluso in uno dei
-volumi "all-in-one".
+Note di verifica (risolte il 2026-07-06, confronto diretto dei file): `Spanish Verb Tenses`
+esisteva in **due copie** con hash diverso (contenuto testuale identico, verificato pagina per
+pagina — solo una ricompressione diversa dello stesso PDF); il duplicato in
+`_notes/raw-sources/` è stato rimosso su conferma dell'utente, resta solo la copia dentro
+`libri-estratti/Practice Makes Perfect/`. Il titolo **"Spanish Pronouns and Prepositions"**
+(ISBN 978-1-26-046755-0, Premium 4th ed. 2021) è un libro reale del catalogo, non un titolo
+fantasma né incluso in un volume all-in-one: è **genuinamente assente** dall'archivio digitale
+`libri.7z` — da recuperare separatamente se serve per il modulo `spa-02` (falsi amici) o `spa-09`
+(grammatica intermedia). I due libri cartacei erano stati persi nella prima ricognizione perché
+letta solo a campione: **"Contacto — Curso de español para italianos"** è particolarmente
+rilevante, essendo un corso pensato esplicitamente per madrelingua italiani con attività DELE
+Nivel Intermedio incluse.
 
 ## 3. Canali, podcast e siti già in uso
 
@@ -151,6 +161,13 @@ tra *pretérito indefinido* e *pretérito perfecto compuesto* per abitudine dal 
 italiano, pronuncia della "r" vibrante e della "j" spagnola. Questa lista alimenta direttamente il
 modulo dedicato ai falsi amici nella roadmap pedagogica (vedi `LEARNER_PROFILE.md`).
 
+**Mazzo Anki generato**: dato che nessun mazzo pubblico copre questa coppia di lingue (sezione 5),
+il mazzo è stato costruito su misura in `tools/generate-falsos-amigos-deck.py` (18 falsi amici
+lessicali + 4 interferenze grammaticali, tag `falso-amico` / `interferenza-grammaticale` / `spa-02`).
+Si rigenera con `python tools/generate-falsos-amigos-deck.py`, output in
+`_notes/anki-decks/falsos-amigos-it-es.apkg` (locale, non tracciato: la fonte di verità è la lista
+nello script, tracciata). Da importare in Anki una volta installato.
+
 ## 8. Note di metodologia dalla community (da ricerca, aggregata — non verificata in prima persona)
 
 Critica ricorrente a Duolingo/app mainstream usate da sole: costruiscono riconoscimento passivo,
@@ -175,7 +192,13 @@ Reactor + Netflix) rispetto ai soli mazzi predefiniti.
 ## 10. Stato dei server MCP candidati (verificato al 2026-07-06)
 
 - **ankimcp/anki-mcp-server** — il più maturo (aggiornato 2 giorni prima della verifica, 369
-  stelle, 0 issue aperte, MIT) — scelto per questo progetto (vedi `.mcp.json`).
+  stelle, 0 issue aperte, MIT) — scelto per questo progetto. Comando verificato il 2026-07-06
+  contro README GitHub e ankimcp.ai (non più un tentativo): pacchetto npm `@ankimcp/anki-mcp-server`,
+  flag `--stdio` obbligatorio per l'integrazione MCP standard (altrimenti apre un server HTTP sulla
+  porta 3000), configurato in `.mcp.json`. Nessuna API key richiesta in modalità locale; richiede
+  Node.js 22.12.0+, Anki desktop già avviato e l'add-on AnkiConnect (porta 8765 di default) prima
+  di avviare il server MCP. Limite noto: `updateNoteFields` fallisce silenziosamente se la nota è
+  aperta nel browser di Anki.
 - **olafgeibig/knowledge-mcp** — sano ma rilasci più lenti (ultimo a 5 mesi dalla verifica);
   candidato per un eventuale upgrade da `doc-ingest` a RAG vero.
 - **nkapila6/mcp-local-rag** — il più aggiornato tra le alternative RAG locali (giugno 2026),

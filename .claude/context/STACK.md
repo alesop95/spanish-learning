@@ -5,9 +5,10 @@ generated-date: 2026-07-06
 covers-paths:
   - .mcp.json
   - tools/doc-ingest.py
+  - tools/generate-falsos-amigos-deck.py
   - _notes/.tmp-doc-cache/**
   - vault-spagnolo/**
-last-verified-commit: 2caee17
+last-verified-commit: PENDING-NEXT-COMMIT
 ---
 
 # Stack di apprendimento
@@ -20,9 +21,17 @@ last-verified-commit: 2caee17
 
 Orchestrazione: Claude Code, pacchetto `learning-agent` (tre subagent, tre skill, tre comandi,
 vedi `context/learning-agent-reference.md`). Knowledge base: `doc-ingest` (script Python,
-`tools/doc-ingest.py`, dipendenza `markitdown`), che indicizza il corpus di `_notes/raw-sources/`
-in una cache Markdown a costo zero sotto `_notes/.tmp-doc-cache/`, senza retrieval semantico.
-Spaced repetition: `ankimcp/anki-mcp-server` via `.mcp.json`, proxy locale verso Anki
+`tools/doc-ingest.py`, dipendenza `markitdown[pdf,docx,xlsx]`), che indicizza il corpus di
+`_notes/raw-sources/` in una cache Markdown a costo zero sotto `_notes/.tmp-doc-cache/`, senza
+retrieval semantico. Fallback OCR (`--ocr`) per i PDF scansionati senza testo nativo (un caso
+reale in questo corpus, "Basic Spanish"): richiede i binari di sistema Tesseract OCR e Poppler
+(installati via `winget`, id `UB-Mannheim.TesseractOCR` e `oschwartz10612.Poppler`) più i pacchetti
+lingua `eng` e `spa` di Tesseract (quest'ultimo scaricato a parte in una cartella utente puntata da
+`TESSDATA_PREFIX`, perché l'installer di base include solo l'inglese) e le librerie Python
+`pytesseract`+`pdf2image`. Generazione mazzi Anki su misura: `tools/generate-falsos-amigos-deck.py`
+(dipendenza `genanki`), per contenuti come i falsi amici italiano→spagnolo che nessun mazzo
+pubblico copre. Spaced repetition: `ankimcp/anki-mcp-server` via `.mcp.json` (pacchetto npm
+`@ankimcp/anki-mcp-server`, comando verificato con flag `--stdio`), proxy locale verso Anki
 desktop + add-on AnkiConnect (installazione degli applicativi desktop a carico dell'utente).
 Superficie di note personali: vault Obsidian dedicato in `vault-spagnolo/` (locale, non tracciato),
 raggiungibile dagli account Claude Code di questa macchina tramite il server MCP `obsidian-vaults`

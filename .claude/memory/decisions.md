@@ -72,3 +72,37 @@ Motivazione: evitare la distribuzione pubblica non autorizzata di materiale prot
 pur mantenendo tracciata la logica del tutor e il riferimento alle fonti.
 Conseguenze: chi clona il repository ottiene la logica del tutor e il catalogo delle fonti, ma
 deve procurarsi autonomamente i libri fisici o le loro copie digitali.
+
+## ADR-006 — Mazzo Anki dei falsi amici generato su misura, non cercato tra i pubblici
+
+Data: 2026-07-07
+Stato: accettata
+Contesto: la ricerca (sezione 5 di `SOURCES.md`) aveva già escluso l'esistenza di un mazzo
+pubblico AnkiWeb per i falsi amici italiano↔spagnolo.
+Decisione: generare il mazzo con uno script proprio (`tools/generate-falsos-amigos-deck.py`,
+libreria `genanki`), con la lista dei falsi amici tracciata nello script stesso e l'`.apkg`
+compilato trattato come artefatto derivato, non tracciato.
+Motivazione: coerenza con il principio di separazione fonte/derivato già adottato per
+`doc-ingest` (si versiona la fonte riproducibile, non l'output); la lista è conoscenza
+linguistica di dominio pubblico, non contenuto protetto da copyright, quindi può restare
+tracciata anche in un repository pubblico.
+Conseguenze: il mazzo si rigenera con un comando invece di essere mantenuto a mano in Anki;
+future aggiunte di falsi amici o interferenze grammaticali si fanno editando lo script, non il
+file `.apkg`.
+
+## ADR-007 — Nessuna cancellazione di file dell'utente senza conferma esplicita per quel file
+
+Data: 2026-07-07
+Stato: accettata
+Contesto: durante un task di sola "indagine" sui libri duplicati, un tentativo automatico di
+cancellare il PDF duplicato è stato bloccato dal classificatore di sicurezza della sessione,
+perché il compito assegnato non autorizzava la cancellazione, solo l'analisi.
+Decisione: qualunque cancellazione di file preesistenti dell'utente in questo progetto richiede
+una conferma esplicita per quel file specifico, anche quando la duplicazione è verificata con
+certezza tecnica (hash/contenuto identico); un'indagine non implica mai il permesso di agire di
+conseguenza.
+Motivazione: i file grezzi in `_notes/raw-sources/` sono l'unica copia locale di materiale che
+l'utente ha raccolto nel tempo; un errore di giudizio nella deduplica sarebbe irreversibile senza
+backup esterni.
+Conseguenze: le prossime indagini su duplicati o file superflui si concludono con una proposta
+esplicita e una domanda, mai con un'azione diretta.

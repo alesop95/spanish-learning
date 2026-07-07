@@ -2,7 +2,7 @@
   "mcpServers": {
     "anki": {
       "command": "cmd",
-      "args": ["/c", "npx", "-y", "anki-mcp-server"]
+      "args": ["/c", "npx", "-y", "@ankimcp/anki-mcp-server", "--stdio"]
     }
   }
 }

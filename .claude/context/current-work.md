@@ -25,12 +25,17 @@ File da modificare:
 
 ```
 LEARNER_PROFILE.md   popolato con le risposte reali del learner e la roadmap costruita
+README.md            guida pubblica e operativa d'uso del sistema, creata da zero
 ```
 
 Definition of done:
 
 - [x] `/profile` eseguito con risposte reali, non placeholder
 - [x] Roadmap pedagogica presente in `LEARNER_PROFILE.md` (unità spa-01…spa-11)
+- [x] Comando `anki-mcp-server` verificato, OCR funzionante, mazzo falsi amici generato, catalogo
+  libri corretto (giro di sviluppo chiuso 2026-07-07)
+- [x] Documentazione operativa scritta in `README.md` (onboarding, ciclo di studio, doc-ingest,
+  Anki, mazzo falsi amici, vault, stato e riferimenti)
 - [ ] Prima unità erogata con `/learn`, con citazione di una fonte reale da `SOURCES.md`
 
 Domande aperte:
@@ -40,4 +45,4 @@ tutor traccia comunque i progressi in `LEARNER_PROFILE.md` in assenza di Anki.
 
 ## Riconciliazione
 
-Ultima verifica: 2026-07-06, al commit `2caee17`.
+Ultima verifica: 2026-07-07, al commit `2caee17` (modifiche successive non ancora committate).

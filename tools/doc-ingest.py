@@ -18,7 +18,10 @@ Motore di default: markitdown (MIT). Con --engine docling si usa Docling sui sol
 .pdf per i layout complessi (tabelle, multi-colonna) dove markitdown degrada; e una
 dipendenza opzionale, importata solo se il flag e' passato. Con --ocr si tenta il
 fallback OCR via pytesseract sui PDF scansionati senza testo estraibile; richiede il
-binario di sistema tesseract-ocr, anch'esso opzionale.
+binario di sistema tesseract-ocr con i pacchetti lingua "eng" e "spa" (il corpus di
+questo progetto e' bilingue), anch'esso opzionale, piu' Poppler per pdf2image. Se
+"spa.traineddata" non e' nella cartella tessdata di sistema, impostare la variabile
+d'ambiente TESSDATA_PREFIX su una cartella che lo contenga prima di lanciare --ocr.
 
 Uso:
     python doc-ingest.py SORGENTE --out _notes/.tmp-doc-cache
@@ -97,7 +100,7 @@ def convert_with_ocr(path):
             "tesseract-ocr, non trovati nell'ambiente corrente."
         )
     pages = convert_from_path(str(path))
-    return "\n\n".join(pytesseract.image_to_string(page) for page in pages)
+    return "\n\n".join(pytesseract.image_to_string(page, lang="eng+spa") for page in pages)
 
 
 def convert_file(path, engine, ocr):

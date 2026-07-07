@@ -2,6 +2,55 @@
 
 > Append-only, in ordine cronologico inverso.
 
+## 2026-07-07 — Documentazione operativa (README.md)
+
+Commit: successivo a 2caee17, non ancora committato
+File toccati: nuovo `README.md` (guida pubblica: architettura in breve, `/profile`, ciclo
+`/learn`+`/review`, `doc-ingest.py` con OCR, collegamento Anki, generazione del mazzo falsi amici,
+vault Obsidian, stato del progetto, riferimenti), `CLAUDE.md` (indicizza `README.md` e i due
+script tracciati sotto `tools/`, corregge un grassetto residuo nella prosa non conforme a
+`rules/interaction-style.md`, aggiunge il vincolo su ADR-007), `context/current-work.md` (criterio
+di definition of done chiuso).
+
+Motivo: a chiusura del giro di sviluppo, l'utente ha chiesto la documentazione operativa completa
+di come si usa il sistema, scritta seguendo lo stile discorsivo di `rules/interaction-style.md`
+invece che un elenco di feature.
+
+Non ancora eseguito: commit di tutte le modifiche pendenti (secondo commit del progetto), prima
+unità reale con `/learn`, installazione di Anki desktop + AnkiConnect.
+
+## 2026-07-07 — Chiusura del giro di sviluppo: Anki verificato, OCR, mazzo falsi amici, catalogo corretto
+
+Commit: successivo a 2caee17, non ancora committato
+File toccati: `.mcp.json` (comando reale `@ankimcp/anki-mcp-server --stdio`, non più un tentativo),
+`tools/doc-ingest.py` (fallback OCR con `lang="eng+spa"`, nota su `TESSDATA_PREFIX`), nuovo
+`tools/generate-falsos-amigos-deck.py` (genanki, 18 falsi amici + 4 interferenze grammaticali),
+`SOURCES.md` (catalogo libri corretto da campione a lettura integrale delle 13 righe reali —
+scoperti due libri cartacei non catalogati prima, tra cui "Contacto - Curso de español para
+italianos" molto pertinente; confermato che "Spanish Pronouns and Prepositions" è un libro reale
+genuinamente assente dall'archivio; risolto il dubbio sulle due copie di "Spanish Verb Tenses",
+identiche, duplicato rimosso su conferma esplicita), `context/roadmap.md` e `context/STACK.md`
+aggiornati di conseguenza.
+
+Ambiente di sistema toccato (fuori da git, ma rilevante per riprodurre l'ambiente): installati via
+`winget` i binari Tesseract OCR (`UB-Mannheim.TesseractOCR`) e Poppler (`oschwartz10612.Poppler`);
+scaricato il pacchetto lingua spagnola di Tesseract in una cartella utente dedicata (l'installer
+di base include solo l'inglese); installati via pip i pacchetti `pytesseract`, `pdf2image`,
+`genanki`, e le estensioni `markitdown[pdf,docx,xlsx]` già usate per l'ingestione base.
+
+Motivo: dopo l'allineamento iniziale e il primo `/profile`, l'utente ha chiesto di chiudere i
+task di sviluppo rimasti aperti prima di passare alla documentazione operativa: verifica del
+comando MCP di Anki, correzione del PDF a 0 parole estratte, indagine sui gap del catalogo libri,
+e costruzione del mazzo Anki dedicato ai falsi amici (nessun mazzo pubblico esistente lo copre).
+
+Un tentativo di cancellazione automatica del PDF duplicato è stato bloccato dal classificatore di
+sicurezza della sessione perché non esplicitamente autorizzato dall'utente per quel file
+specifico; la cancellazione è stata rieseguita solo dopo conferma diretta.
+
+Non ancora eseguito: installazione di Anki desktop + AnkiConnect (a carico dell'utente, resta
+l'unico prerequisito mancante per attivare davvero lo spaced repetition); import del mazzo
+falsi amici in Anki; documentazione operativa (prossimo passo dichiarato dall'utente).
+
 ## 2026-07-06 — Prima esecuzione di /profile e log delle sessioni
 
 Commit: successivo a 2caee17, non ancora committato
