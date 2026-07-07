@@ -2,6 +2,40 @@
 
 > Append-only, in ordine cronologico inverso.
 
+## 2026-07-07 — Consolidamento spa-01
+
+Commit: successivo a 2caee17, non ancora committato
+File toccati: `LEARNER_PROFILE.md` (`progress.roadmap_module: spa-01-consolidato`),
+`SESSION-LOG.md` (voce del secondo tentativo).
+
+Motivo: su richiesta dell'utente, secondo giro immediato di verifica su spa-01 con uno scenario
+volutamente diverso (mattina, registro formale) per testare la generalizzazione invece della sola
+ripetizione. `examiner` ha confermato il superamento dei tre errori del primo tentativo e rilevato
+produzione autonoma oltre il materiale erogato, dichiarando il modulo consolidato.
+
+Non ancora eseguito: commit delle modifiche, spa-02 (prossimo modulo, mazzo Anki falsi amici già
+pronto), collegamento reale di Anki.
+
+## 2026-07-07 — Prima unità reale: spa-01
+
+Commit: successivo a 2caee17, non ancora committato
+File toccati: `LEARNER_PROFILE.md` (`progress.roadmap_module: spa-01`), `SESSION-LOG.md` (voce di
+sessione con esito), `context/current-work.md` (feature di onboarding chiusa, definition of done
+completa).
+
+Motivo: prima esecuzione reale di `/learn` dopo la chiusura del giro di sviluppo. Il tutor ha
+recuperato tramite `kb-retriever` estratti reali dalla cache doc-ingest ("Spanish Conversation" di
+Yates, "Basic Spanish" di Richmond, "Complete Spanish All-in-One" di Nissenberg), erogato il
+nucleo di spa-01 (saluti, presentarsi, cortesia, numeri 0-10) scalato su una sessione dichiarata di
+10-15 minuti, assegnato un compito di produzione attiva, e delegato la valutazione a `examiner`.
+Emersi tre errori di applicazione in contesto (non di grammatica): posizionamento del saluto
+orario, confusione funzionale ¿Cómo te llamas?/¿Cómo estás?, uso improprio di "Con permiso" come
+congedo. Il ciclo kb-retriever più examiner, mai eseguito prima end-to-end, ha funzionato secondo
+il disegno del pacchetto `learning-agent`.
+
+Non ancora eseguito: commit delle modifiche, collegamento reale di Anki, un secondo mini-dialogo
+di consolidamento su spa-01 nella prossima sessione.
+
 ## 2026-07-07 — Documentazione operativa (README.md)
 
 Commit: successivo a 2caee17, non ancora committato

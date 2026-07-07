@@ -26,7 +26,7 @@ goal: >
   studio già fatto coprirebbe in ottica DELE (vedi SOURCES.md, sezione deleahora.com), senza
   deviare la roadmap verso un percorso d'esame dedicato finché il learner non lo chiede esplicitamente.
 progress:
-  roadmap_module: null
+  roadmap_module: spa-01-consolidato   # consolidato il 2026-07-07 (due passaggi, registro informale e formale); prossimo: spa-02
   anki_deck: null
 ```
 

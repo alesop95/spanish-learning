@@ -3,8 +3,8 @@ generated-from-commit: 2caee17
 generated-from-branch: main
 generated-date: 2026-07-06
 covers-paths: []
-last-verified-commit: 2caee17
-stato: in corso
+last-verified-commit: PENDING-NEXT-COMMIT
+stato: in verifica
 ---
 
 # Lavoro in corso
@@ -36,12 +36,13 @@ Definition of done:
   libri corretto (giro di sviluppo chiuso 2026-07-07)
 - [x] Documentazione operativa scritta in `README.md` (onboarding, ciclo di studio, doc-ingest,
   Anki, mazzo falsi amici, vault, stato e riferimenti)
-- [ ] Prima unità erogata con `/learn`, con citazione di una fonte reale da `SOURCES.md`
+- [x] Prima unità erogata con `/learn` (spa-01), con citazione di fonti reali della libreria
+  catalogata in `SOURCES.md` (Spanish Conversation, Basic Spanish, Complete Spanish All-in-One)
 
-Domande aperte:
-
-Se collegare Anki (`ankimcp/anki-mcp-server`) prima o dopo la prima lezione: non bloccante, il
-tutor traccia comunque i progressi in `LEARNER_PROFILE.md` in assenza di Anki.
+Domande aperte: nessuna bloccante. La feature di onboarding iniziale è chiusa; il lavoro prosegue
+come normale ciclo pedagogico (`/learn`/`/review`) guidato dalla roadmap in `LEARNER_PROFILE.md`,
+non più tracciato qui finché non emerge una feature strutturale nuova (es. collegamento reale di
+Anki, o un cambio di stack).
 
 ## Riconciliazione
 
