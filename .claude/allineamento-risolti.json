@@ -1,6 +1,7 @@
 {
   "tools/doc-ingest.py": {
     "testa": "cf391ad49bc017503e4bdabc4b473d5cbdd03677",
-    "il": "2026-10-28"
+    "il": "2026-11-04",
+    "locale_sha256_lf": "9937a6cb3a0399a16856df47e4bfbe391e15e16a2a06f65eb27b3f3088f8fbe6"
   }
 }
